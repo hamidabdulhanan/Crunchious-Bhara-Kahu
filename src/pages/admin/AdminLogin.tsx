@@ -25,7 +25,7 @@ export default function AdminLogin() {
     }
     setLoading(true);
     setError('');
-    const { error: signInError } = await supabase.auth.signInWithPassword({ abc@gamil.com, hamud123 });
+    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
     if (signInError) {
       setError(signInError.message || 'Invalid credentials.');
       setLoading(false);
